@@ -51,12 +51,19 @@ const Todo = ({ id, complete, text }) => {
   const onCompleteTodo = (id, complete) =>
     todosRef.doc(id).set({ complete: !complete }, { merge: true });
 
-  const onDeleteTodo = (id) => todosRef.doc(id).delete();
+  const onDeleteTodo = (id) => {
+    try {
+      
+      todosRef.doc(id).delete()}
+     catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div key={id} className="todo">
       <button
-        className={`todo-item ${complete ? "complete" : ""}`}
+        className={`todo-item  ${complete ? "complete" : ""}`}
         tabIndex="0"
         onClick={() => onCompleteTodo(id, complete)}
       >

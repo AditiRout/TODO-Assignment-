@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Todos.css";
 import Todos from "./Todos";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
@@ -17,7 +17,7 @@ const sighInWithGoogle = () =>{
 }
 
  const SignIn = () => (
-  <main className="App">
+  <main>
      <h1>TODO APP</h1>
      <button className="custom-btn btn-9" onClick={sighInWithGoogle}>Sign In With Google</button>
   </main>
